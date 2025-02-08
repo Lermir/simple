@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Example</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
     <style>
         * {
             text-decoration: none;
@@ -28,7 +30,7 @@
             font-weight: 800;
             float: left;
             font-family: courier;
-            color: #364f6b;
+            color: #ffffff;
         }
         
         .menu {
@@ -43,9 +45,9 @@
             position: sticky;
             position: -webkit-sticky; 
             top: 0;
-            background: #FFFFFF;
+            background: #000000;
             z-index: 1;
-            border-bottom:1px solid #364f6b;
+            border-bottom:1px solid #ffffff;
         }
         
         nav ul {
@@ -273,12 +275,44 @@
                     <li><a href="#courses">Courses</a></li>
                     <li><a href="#tutors">Tutors</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="" class="tbl-biru">Sign Up</a></li>
+                    <li>
+                        <a href="https://accounts.google.com/o/oauth2/auth?
+                        client_id=YOUR_CLIENT_ID&
+                        redirect_uri=YOUR_REDIRECT_URI&
+                        response_type=code&
+                        scope=email%20profile&
+                        access_type=offline&
+                        flowName=GeneralOAuthFlow"
+                        class="tbl-biru">Sign Up with Google</a>
+                    </li>
+                    
+                    
+
                 </ul>
             </div>
         </div>
     </nav>
     <script>
+        const express = require('express');
+        const axios = require('axios');
+        const app = express();
+        
+        app.get('/oauth2callback', async (req, res) => {
+            const { code } = req.query;
+        
+            const tokenResponse = await axios.post('https://oauth2.googleapis.com/token', {
+                client_id: 'YOUR_CLIENT_ID',
+                client_secret: 'YOUR_CLIENT_SECRET',
+                code: code,
+                grant_type: 'authorization_code',
+                redirect_uri: 'YOUR_REDIRECT_URI'
+            });
+        
+            res.json(tokenResponse.data);
+        });
+        
+        app.listen(3000, () => console.log('Server running on port 3000'));
+
     var tombolMenu = document.getElementsByClassName('tombol-menu')[0];
 var menu = document.getElementsByClassName('menu')[0];
 
@@ -289,6 +323,19 @@ tombolMenu.onclick = function() {
 menu.onclick = function() {
     menu.classList.toggle('active');
 }
+function handleCredentialResponse(response) {
+    console.log("ID Token: " + response.credential);
+  }
+  function handleAuthResponse() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const authCode = urlParams.get("code");
+
+    if (authCode) {
+      console.log("Authorization Code: " + authCode);
+    }
+  }
+
+  window.onload = handleAuthResponse;
 </script>
     <div class="wrapper">
         <!-- untuk home -->
