@@ -277,6 +277,24 @@
         nav.shrink ul li a {
             padding: 5px 10px;
         }
+
+        #services {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: auto;
+            margin-bottom: 50px;
+        }
+        
+        #services img {
+            width: 45%;
+            border-radius: 10px;
+        }
+        
+        #services .kolom {
+            width: 50%;
+        }
+        
         
     </style>
 </head>
@@ -301,7 +319,7 @@
         </div>
     </nav>
     <script>
-               document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function () {
             var navbar = document.querySelector("nav");
             var coursesSection = document.getElementById("courses");
         
@@ -317,7 +335,8 @@
         
             window.addEventListener("scroll", checkScroll);
             checkScroll();
-        }); 
+        });
+        
         
         const express = require('express');
         const axios = require('axios');
@@ -385,6 +404,17 @@ function handleCredentialResponse(response) {
                 <p><a href="" class="tbl-biru">Pelajari SEO Sekarang</a></p>      
             </div>
             <img src="https://img.freepik.com/free-vector/illustration-searching-website_53876-36921.jpg?t=st=1739033017~exp=1739036617~hmac=67a63b1d4bb3f1a7b4d6413c89d4aba3a3990aa8ecf23bb2ac75961bef1ef288&w=740"/>
+        </section>
+
+        <!--services-->
+        <section id="services">
+            <div class="kolom">
+                <p class="deskripsi">Layanan SEO Profesional</p>
+                <h2>Jasa SEO yang Kami Tawarkan</h2>
+                <p>Kami menawarkan berbagai layanan optimasi SEO, mulai dari riset kata kunci, audit teknis, hingga backlink berkualitas. Semua strategi kami dirancang untuk meningkatkan peringkat website Anda secara organik di Google.</p>
+                <p><a href="" class="tbl-pink">Lihat Detail Layanan</a></p>      
+            </div>
+            <img src="https://img.freepik.com/free-vector/digital-marketing-strategy_23-2148822854.jpg?w=740"/>
         </section>
 
         <!-- untuk tutors -->
