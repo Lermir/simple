@@ -301,26 +301,23 @@
         </div>
     </nav>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+               document.addEventListener("DOMContentLoaded", function () {
             var navbar = document.querySelector("nav");
             var coursesSection = document.getElementById("courses");
         
-            var observer = new IntersectionObserver(
-                function (entries) {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            navbar.classList.add("shrink");
-                        } else {
-                            navbar.classList.remove("shrink");
-                        }
-                    });
-                },
-                { root: null, threshold: 0.2 } // 20% Courses masuk, baru berubah
-            );
+            function checkScroll() {
+                var coursesTop = coursesSection.getBoundingClientRect().top;
+                
+                if (coursesTop <= 0) {
+                    navbar.classList.add("shrink");
+                } else {
+                    navbar.classList.remove("shrink");
+                }
+            }
         
-            observer.observe(coursesSection);
-        });
-        
+            window.addEventListener("scroll", checkScroll);
+            checkScroll();
+        }); 
         
         const express = require('express');
         const axios = require('axios');
