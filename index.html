@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Example</title>
+    <title>SEO</title>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
     <style>
@@ -41,7 +41,7 @@
             width: 100%;
             margin: auto;
             display: flex;
-            line-height: 80px;
+            line-height: 60px;
             position: sticky;
             position: -webkit-sticky; 
             top: 0;
@@ -62,7 +62,7 @@
         }
         
         nav ul li a {
-            color: black;
+            color: rgb(255, 255, 255);
             font-weight: bold;
             text-align: center;
             padding: 0px 16px 0px 16px;
@@ -263,36 +263,65 @@
                 width: 50%;
             }
         }
+
+        nav.shrink {
+            line-height: 50px;
+            padding: 5px 0;
+            transition: all 0.3s ease;
+        }
+        
+        nav.shrink .logo a {
+            font-size: 30px;
+        }
+        
+        nav.shrink ul li a {
+            padding: 5px 10px;
+        }
+        
     </style>
 </head>
 <body>
     <nav>
         <div class="wrapper">
-            <div class="logo"><a href=''>Example</a></div>
+            <div class="logo"><a href=''>Jasa SEO Terbaik & Terpercaya di Indonesia</a></div>
             <div class="menu">
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#courses">Courses</a></li>
                     <li><a href="#tutors">Tutors</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li>
-                        <a href="https://accounts.google.com/o/oauth2/auth?
-                        client_id=YOUR_CLIENT_ID&
-                        redirect_uri=YOUR_REDIRECT_URI&
-                        response_type=code&
-                        scope=email%20profile&
-                        access_type=offline&
-                        flowName=GeneralOAuthFlow"
-                        class="tbl-biru">Sign Up with Google</a>
-                    </li>
-                    
-                    
-
+                    <li><a href="https://accounts.google.com/o/oauth2/auth?
+                        client_id=9694-2043-0664
+                        &redirect_uri=https://lermir.github.io/simple/
+                        &response_type=code
+                        &scope=email%20profile
+                        &access_type=online" class="tbl-biru">Sign Up</a></li>             
                 </ul>
             </div>
         </div>
     </nav>
     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var navbar = document.querySelector("nav");
+            var coursesSection = document.getElementById("courses");
+        
+            var observer = new IntersectionObserver(
+                function (entries) {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            navbar.classList.add("shrink");
+                        } else {
+                            navbar.classList.remove("shrink");
+                        }
+                    });
+                },
+                { root: null, threshold: 0.2 } // 20% Courses masuk, baru berubah
+            );
+        
+            observer.observe(coursesSection);
+        });
+        
+        
         const express = require('express');
         const axios = require('axios');
         const app = express();
@@ -340,24 +369,25 @@ function handleCredentialResponse(response) {
     <div class="wrapper">
         <!-- untuk home -->
         <section id="home">
-            <img src="https://img.freepik.com/free-vector/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_107791-3863.jpg?size=626&ext=jpg&ga=GA1.2.1769275626.1605867161"/>
+            <img src="https://img.freepik.com/free-vector/seo-concept-illustration_114360-5766.jpg?t=st=1739033238~exp=1739036838~hmac=d53c101fe2591083d967ba41a13da113a1f54b6dd52dd4aa03207655e9584984&w=740"/>
             <div class="kolom">
-                <h2>LOREM IPSUM</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, nobis.</p>
+                <h2>Jasa SEO Terbaik di Indonesia</h2>
+                <p>Ingin website Anda muncul di halaman pertama Google? Kami menyediakan layanan SEO profesional yang membantu bisnis Anda mendapatkan lebih banyak traffic dan pelanggan potensial.</p>
                 <p><a href="" class="tbl-pink">Pelajari Lebih Lanjut</a></p>
-            </div>
+            </div>            
         </section>
 
         <!-- untuk courses -->
         <section id="courses">
             <div class="kolom">
-                <p class="deskripsi">You Will Need This</p>
-                <h2>Online Courses</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed deserunt voluptatibus possimus blanditiis reiciendis. Qui, facilis! Delectus exercitationem dolores sapiente?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed deserunt voluptatibus possimus blanditiis reiciendis. Qui, facilis! Delectus exercitationem dolores sapiente?</p>
-                <p><a href="" class="tbl-biru">Pelajari Lebih Lanjut</a></p>
+                <p class="deskripsi">Ingin Website Makin Populer di Google?</p>
+                <h2>Strategi Ampuh Promosi SEO</h2>
+                <p>Mengoptimalkan SEO bukan hanya soal kata kunci, tapi juga strategi promosi yang tepat. Dengan teknik yang benar, website bisa mendapatkan peringkat lebih tinggi dan menarik lebih banyak pengunjung secara organik.</p>
+                <p>Mulai dari membangun brand awareness, membuat konten berkualitas, hingga memanfaatkan media sosial dan backlink yang relevan, semua ini adalah bagian dari strategi SEO modern yang efektif.</p>
+                <p>Di kursus ini, kamu akan belajar cara mempromosikan website dengan teknik SEO terbaru yang aman, efektif, dan bebas dari penalti Google!</p>
+                <p><a href="" class="tbl-biru">Pelajari SEO Sekarang</a></p>      
             </div>
-            <img src="https://img.freepik.com/free-vector/online-learning-isometric-concept_1284-17947.jpg?size=626&ext=jpg&ga=GA1.2.1769275626.1605867161"/>
+            <img src="https://img.freepik.com/free-vector/illustration-searching-website_53876-36921.jpg?t=st=1739033017~exp=1739036617~hmac=67a63b1d4bb3f1a7b4d6413c89d4aba3a3990aa8ecf23bb2ac75961bef1ef288&w=740"/>
         </section>
 
         <!-- untuk tutors -->
@@ -390,34 +420,28 @@ function handleCredentialResponse(response) {
             </div>
         </section>
 
-        
-
-    <div id="contact">
-        <div class="wrapper">
-            <div class="footer">
-                <div class="footer-section">
-                    <h3>Example</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint, culpa!</p>
-                </div>
-                <div class="footer-section">
-                    <h3>About</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint, culpa!</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p>Example</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Social</h3>
-                    <p>Example</p>
+        <div id="contact">
+            <div class="wrapper">
+                <div class="footer">
+                    <div class="footer-section">
+                        <h3>About</h3>
+                        <p><a href="https://example.com/about">Informasi tentang kami dan tujuan website ini</a></p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact</h3>
+                        <p><a href="mailto:contact@example.com">Hubungi kami melalui email</a></p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Social</h3>
+                        <p><a href="https://instagram.com/example">Ikuti kami di Instagram</a></p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
+        
     <div id="copyright">
         <div class="wrapper">
-            &copy; 2020. <b>Example</b> All Rights Reserved.
+            &copy; 2025. <b>webseo</b> All Rights Reserved.
         </div>
     </div>
     
